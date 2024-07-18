@@ -1,0 +1,61 @@
+
+
+   <div class="content mt-5">
+
+    <div class="mb-3   d-flex justify-content-center  ">
+   
+        <input [(ngModel)]="inputSearch" type="text" class="rounded-2 w-50 " id="" placeholder="Search">
+       
+    </div>
+
+    <div class="pt-3 d-flex flex-column justify-content-center table-container table-responsive ">
+        <table class="table table-striped text-center ">
+        <thead>
+            
+            <th ><p class="d-flex align-items-end justify-content-around ">Name<span class="d-flex flex-column ms-3  Name">
+                <i class="fa-solid fa-angle-up " (click)="SortByNameAsc()"></i>
+                <i class="fa-solid fa-angle-down" (click)="SortByNameDesc()"></i></span>
+            </p>
+            </th>
+            <th ><p class="d-flex align-items-end justify-content-around"> UserName<span class="d-flex flex-column ms-3 user">
+                <i class="fa-solid fa-angle-up " (click)="SortByUserNameAsc()"></i>
+                <i class="fa-solid fa-angle-down" (click)="SortByUserNameDesc()"></i></span>
+               </p>
+            </th>
+            <th ><p class="d-flex align-items-center justify-content-around ">Email<span class="d-flex flex-column ms-3 email">
+                <i class="fa-solid fa-angle-up " (click)="SortByEmailAsc()"></i>
+                <i class="fa-solid fa-angle-down" (click)="SortByEmailDesc()"></i></span>
+                </p> 
+            </th>
+            <th ><p class="d-flex align-items-end ">Address</p></th>
+            <th><p class="d-flex align-items-end ">Phone</p></th>
+            <th><p class="d-flex align-items-end ">Wepsite</p></th>
+            <th><p class="d-flex align-items-end ">Company</p></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of paginateUsers | search:inputSearch " [routerLink]="['/userDetails',user.id]"  >
+               
+                <td> {{user.name}} </td>
+                <td> {{user.username}} </td>
+                <td> {{user.email}} </td>
+                <td> {{user.address.city}}</td>
+                <td> {{user.phone}} </td>
+                <td> {{user.website}} </td>
+                <td> {{user.company.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ngb-pagination
+    class="d-flex justify-content-center p-1"
+    style="color: rgb(5, 155, 155) !important"
+    [pageSize]="pageSize"
+    [(page)]="currentPage"
+    [collectionSize]="UsersList.length"
+    [boundaryLinks]="false"
+    [maxSize]="maxSize"
+    (pageChange)="paginate($event)"
+  ></ngb-pagination>
+    </div>
+   </div>
+

@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --main-color : rgb(5, 155, 155);
+    
+}
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+
+i{
+    cursor: pointer;
+}
+body{
+    background-color: #FAF9F6;
+}
+
+input{
+    
+    display: block;
+    border: 1px solid #D1D1D1;
+    padding: 7px 12px;
+}
+input::placeholder{
+    color: #D1D1D1;
+}
+input:focus {
+   outline: none ;
+   border-color: var(--main-color);
+}
+.globalColor{
+    color:var(--main-color) ;
+    font-weight: 600;
+}
+.btnGlobal{
+    padding: 7px 0;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+.grayLight{
+    color: #adadad;
+}
+
+
+

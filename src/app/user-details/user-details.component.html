@@ -1,0 +1,48 @@
+<h2 class="globalColor mt-5">{{user.name}} </h2>
+<p class="grayLight">{{user.address.city}}, {{user.address.street}} </p>
+
+<div class="row pt-3">
+    <div class="col-md-2">
+        <div class="info">
+            <p>Id</p>
+            <p>Name</p>
+            <p>userName</p>
+            <p>Email</p>
+            <p>Address</p>
+            <p>Phone</p>
+            <p>Website</p>
+            <p class=" pb-5">Company</p>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="data">
+            <p>{{user.id}}</p>
+            <p>{{user.name}}</p>
+            <p>{{user.username}}</p>
+            <p>{{user.email}}</p>
+            <p>{{user.address.street}}, {{user.address.suite}}, {{user.address.city}}, {{user.address.zipcode}}</p>
+            <p>{{user.phone}}</p>
+            <p><a href="#">{{user.website}}</a></p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="heading">
+                        <p class="grayLight">Name: </p>
+                        <p class="grayLight">Catch Phrase: </p>
+                        <p class="grayLight">BS: </p>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="filldata">
+                        <p> {{user.company.name}}</p>
+                        <p> {{user.company.catchPhrase}}</p>
+                        <p> {{user.company.bs}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<a  routerLink="/users" class="btnGlobal py-2 rounded-3 px-3" >go to back</a>
